@@ -13,7 +13,7 @@
             $this->renderer = $renderer;
         }
         public function getUsers(){
-            $data['users']=$this->userModel->getUsers();
+            $data['user']=$this->userModel->getUsers();
             $this->renderer->render("user", $data);
         }
         public function login($email, $password){
