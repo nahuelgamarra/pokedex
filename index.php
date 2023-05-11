@@ -1,33 +1,10 @@
 <?php
     
-    use conection\Conection;
-    use controller\UserController;
-    use model\UserModel;
+    include_once('Configuration.php');
+    $configuration = new Configuration();
+    $router = $configuration->getRouter();
     
-    include_once("./conection/Conection.php");
-    include_once("./view/header.html");
-    include_once ("./controller/UserController.php");
-    include_once ("./model/UserModel.php");
-   
-
-    $mio= new Conection();
-    $conection=  $mio->getConection();
+    $module = $_GET['module'] ?? 'user';
+    $method = $_GET['action'] ?? 'getUsers';
     
-    $sql= "select user.usuario ,user.email from user where idUser=2 ";
-
-    $model= new UserModel($conection);
-    $control=new UserController($model);
-  // $resultado2= $control->getUsers();
-   
-  
-    $password= '123';
-    $email= 'asuario@gmail.com';
-    $resultado=($control->login($email,$password));
- //   var_dump($resultado);
-
-    foreach ($resultado as $res){
-        foreach ($res as $us){
-            echo "$us" . "<br>";
-        }
-    }
-    ?>
+    $router->route($module, $method);

@@ -1,8 +1,7 @@
 <?php
     
-    namespace conection;
     
-    use mysqli;
+   
 
     class Conection
     {
@@ -11,21 +10,25 @@
         private $password;
         private $database;
         private $port;
-        private $conection;
+        private $connection;
     
-        public function __construct()
+        public function __construct($server,$username,$password,$database,$port)
         {
-            $config = parse_ini_file('config.ini');
+            $config = parse_ini_file('config/config.ini');
     
             $this->server = $config['SERVER'];
             $this->username = $config['USERNAME'];
             $this->password = $config['PASSWORD'];
             $this->database = $config['DATABASE'];
             $this->port= $config['PORT'];
-            $this->conection = new mysqli($this->server, $this->username, $this->password, $this->database, $this->port);
+            $this->connection = new mysqli($this->server, $this->username, $this->password, $this->database, $this->port);
         }
-        public function getConection(){
-            return $this->conection;
+        public function getConnection(){
+            return $this->connection;
+        }
+        public function query($sql) {
+            $result = mysqli_query($this->connection, $sql);
+            return mysqli_fetch_all($result, MYSQLI_BOTH);
         }
         
     
