@@ -12,17 +12,22 @@
 
     $mio= new Conection();
     $conection=  $mio->getConection();
+    
     $sql= "select user.usuario ,user.email from user where idUser=2 ";
 
     $model= new UserModel($conection);
     $control=new UserController($model);
-    $resultado= $control->getUsers();
+  // $resultado2= $control->getUsers();
+   
+  
+    $password= '123';
+    $email= 'asuario@gmail.com';
+    $resultado=($control->login($email,$password));
+ //   var_dump($resultado);
+
     foreach ($resultado as $res){
         foreach ($res as $us){
             echo "$us" . "<br>";
         }
     }
-  
-    
-
     ?>

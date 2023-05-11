@@ -13,5 +13,8 @@
             
             return $this->userModel->getUsers();
         }
+        public function login($email, $password){
+          return  $this->userModel->login($email, $password);
+        }
     
     }
