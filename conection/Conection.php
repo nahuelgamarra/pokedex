@@ -23,7 +23,8 @@
             $this->port= $config['PORT'];
             $this->connection = new mysqli($this->server, $this->username, $this->password, $this->database, $this->port);
         }
-        public function getConnection(){
+        public function getConnection()
+        {
             return $this->connection;
         }
         public function query($sql) {

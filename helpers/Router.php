@@ -17,8 +17,11 @@
         
         public function route($module, $method)
         {
+        
             $controller = $this->getControllerFrom($module);
+            
             $this->executeMethodFromController($controller, $method);
+         
         }
         
         private function getControllerFrom($module)
