@@ -20,6 +20,10 @@
             return $resultado;
         }
         public function login($email, $password){
-        return   $this->database->login($email,$password);
+            if($this->database->login($email,$password)->num_rows==0){
+                return null;
+            }
+            return $this->database->login($email,$password) ;
+           
         }
     }
