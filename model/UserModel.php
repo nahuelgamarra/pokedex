@@ -1,5 +1,5 @@
 <?php
-    
+  //  session_start();
     
     class UserModel
     {
@@ -11,10 +11,10 @@
         public function getUsers(){
             return $this->database->query('select *from user ');
         }
-        public function login1($email, $password){
-            $query = 'SELECT * FROM user WHERE email = ? AND password = ?';
+        public function login1($user, $password){
+            $query = 'SELECT * FROM user WHERE nick = ? AND password = ?';
             $stmt =   $this->database->getConnection()->prepare($query);
-            $stmt->bind_param('ss', $email, $password);
+            $stmt->bind_param('ss', $user, $password);
             $stmt->execute();
             $resultado = $stmt->get_result();
             return $resultado;
@@ -23,7 +23,8 @@
             if($this->database->login($email,$password)->num_rows==0){
                 return null;
             }
-            return $this->database->login($email,$password) ;
+            $result=  $this->database->login($email,$password);
+         return   mysqli_fetch_assoc( $result);
            
         }
     }

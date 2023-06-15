@@ -1,0 +1,11 @@
+footer i{
+    font-size: 2rem;
+    margin-left: 1.2rem;
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+
+footer i:hover{
+    color: #EE155E;
+    transition: 0.4s ease;
+}

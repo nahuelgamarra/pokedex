@@ -12,6 +12,6 @@
             $this->database=$database;
         }
         public function getPokemons(){
-            return $this->database->query('Select *from pokemon');
+         //   return $this->database->query('Select *from pokemon');
         }
     }
