@@ -10,7 +10,7 @@
    
   //  $router = $configuration->getRouter();
    
-    $module = $_GET['module'] ?? 'Home';
+    $module = $_GET['module'] ?? 'Pokemon';
   
     $method = $_GET['action'] ?? 'list';
  

@@ -11,8 +11,10 @@
             $this->renderer = $renderer;
         }
         public function list(){
-            $data= "Estas en el modelo";
-            $this->renderer->render('home');
+    
+            $data['pokemones']= Session::get('pokemones');
+            var_dump($data);
+            $this->renderer->render('home',$data);
         }
         
     }

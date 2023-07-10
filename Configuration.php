@@ -2,10 +2,12 @@
     /*Controlladores*/
     include_once('controller/HomeController.php');
     include_once ("controller/UserController.php");
+    include_once ("controller/PokemonController.php");
     
     /*Modelos*/
     include_once ("model/UserModel.php");
     include_once ("model/HomeModel.php");
+    include_once ("model/PokemonModel.php");
     
     /*Helpers*/
     include_once ("helpers/Router.php");
@@ -21,6 +23,9 @@
         public function getHomeController()
         {
             return new HomeController($this->getRenderer(), new HomeModel($this->getDatabase()));
+        }
+        public function getPokemonController(){
+            return new PokemonController($this->getRenderer(), new PokemonModel($this->getDatabase()));
         }
     
         public static function getInstance()

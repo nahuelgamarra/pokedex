@@ -27,9 +27,13 @@
         {
             return $this->connection;
         }
-        public function query($sql) {
+        public function query($sql){
             $result = mysqli_query($this->connection, $sql);
-            return mysqli_fetch_all($result, MYSQLI_BOTH);
+            return mysqli_fetch_all($result, MYSQLI_ASSOC);
+        }
+        public function query_row($sql) {
+            $result = mysqli_query($this->connection, $sql);
+            return mysqli_fetch_assoc($result, MYSQLI_BOTH);
         }
         public function login($nick, $password){
             $query = 'SELECT * FROM user WHERE nick = ? AND password = ?';
@@ -39,6 +43,6 @@
             $resultado = $stmt->get_result();
             return  $resultado;
         }
-    
+      
     }
  

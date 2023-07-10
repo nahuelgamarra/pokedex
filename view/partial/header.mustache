@@ -14,7 +14,7 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<nav class="navbar-expand-md nav-fill bg-dark-subtle">
+<nav class="navbar-expand-md nav-fill bg-danger">
     <div class="container">
         <div class="row">
 
@@ -25,68 +25,56 @@
             </div>
 
             <div class="col-sm-8 col-md-4 d-flex d-flex align-items-sm-center">
-                <h1 class="h1 text-center">Pokedex</h1>
+                <h1 class="h1 text-center text-white">Pokedex</h1>
             </div>
 
             <div class="col-sm-12 col-md-4 d-flex align-items-sm-center">
-<!--                {{#user}}-->
-<!--                    <h3>{{usuario}}</h3>-->
-<!--               <h1> {{ enSesion}}</h1>-->
-<!--                    <a href="/user/logout"> <button>cerrar cesion </button></a>-->
-<!--                {{/user}}-->
-
                 <div>
-                    {{^logged}}
-                        <div class="container">
-                            <form method="post" name="login" action="/index.php">
-                                <input type="text" name="user" placeholder="User" class="col-sm-5">
-                                <input type="password" name="password" id="password" placeholder="Password" class="col-sm-5">
-                                <!--                        <button type="submit" formaction="registrarse.php" class="col-sm-5">Register</button>-->
-                                <button type="submit" formaction="/user/login"
-                                        class="text-bg-primary col-sm-5">Log In
-                                </button>
-                            </form>
-                            {{#msj}}
-                                <div class="mensaje" style="visibility: visible; color: red;">
+                    <div>
+                        {{^logged}}
+                            <div class="container">
+                                <form method="post" name="login" action="/index.php">
+                                    <input type="text" name="user" placeholder="User" class="col-sm-5">
+                                    <input type="password" name="password" id="password" placeholder="Password"
+                                           class="col-sm-5">
+                                    <!--                        <button type="submit" formaction="registrarse.php" class="col-sm-5">Register</button>-->
+                                    <button type="submit" formaction="/user/login"
+                                            class="text-bg-primary col-sm-5">Log In
+                                    </button>
+                                </form>
+                                {{#msj}}
+                                    <div class="mensaje" style="visibility: visible; color: red;">
 
-                                    {{msj}}
-                                </div>
-                            {{/msj}}
+                                        {{msj}}
+                                    </div>
+                                {{/msj}}
+                            </div>
+                        {{/logged}}
+                    </div>
 
-                        </div>
+                    <div>
+                        {{#logged}}
+                            {{#user}}
 
-                    {{/logged}}
-
-
-
-
-                    {{#logged}}
-                        {{#user}}
-                            <tr>
-
-                                <td>{{nick}}</td>
-                                <td>{{email}}</td>
-                            </tr>
-                        {{/user}}
-                        <a href="/user/logout"> <button>cerrar cesion </button></a>
-                    {{/logged}}
+                                <tr>
+                                    <td>{{nick}}</td>
+                                    <td>{{email}}</td>
+                                </tr>
+                            {{/user}}
+                            <a href="/user/logout">
+                                <button class="btn btn-primary">cerrar cesion</button>
+                            </a>
+                        {{/logged}}
+                    </div>
                 </div>
-
-
             </div>
-
         </div>
     </div>
     <div class="container nav-fill">
         <form action="buscar.php" method="get">
             <input type="search" name="buscado" id="buscado" class="col-sm-10">
             <input type="button" value="Buscar" class="col-sm-1">
-
         </form>
-
-
     </div>
-
-
 </nav>
 <main>

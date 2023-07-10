@@ -1,6 +1,6 @@
 <?php
     
-    namespace model;
+   
     
     class PokemonModel
     {
@@ -12,6 +12,7 @@
             $this->database=$database;
         }
         public function getPokemons(){
-         //   return $this->database->query('Select *from pokemon');
+            $sql= "SELECT p.imagenLink, p.numero ,p.nombre, p.tipo FROM pokemon p";
+           return $this->database->query($sql);
         }
     }

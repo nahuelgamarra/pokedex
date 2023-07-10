@@ -14,10 +14,10 @@
         }
     
         public function render($contentFile , $data = array() ){
-            /*$contentAsString =  file_get_contents("view/". $contentFile . "_view.mustache");
-            echo  $this->mustache->render($contentAsString, $data);*/
+        
             if(!empty(Session::get('logged')))
                 $data['logged'] = Session::get('logged');
+            $data['user']= Session::get('user');
             if(!empty(Session::get('rol')))
                 $data['rol'] = Session::get('rol');
             if(!empty(Session::get('username')))
