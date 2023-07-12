@@ -1,38 +1,45 @@
 <article>
     <div class="container">
         <div>
-            <h1>Este es el home</h1>
+            <h1>POKEMONES</h1>
         </div>
         <div>
-
-            <table class="table">
-                <thead>
-                <tr class="table table-active">
-                    <th>Imagen</th>
-                    <th>Tipo</th>
-                    <th>Numero</th>
-                    <th>Nombre</th>
-                    <th>Habilidad Especial</th>
-                </thead>
-                <tbody>
-
-                {{#pokemones}}
-                    <tr>
-                    <td><img src="../public/imagenes/pokemon/{{imagenLink}}" alt="Imagenn pokemon"></td>
-                    <td>{{tipo}}</td>
-                    <td>{{numero}}</td>
-                    <td>{{nombre}}</td>
-                    <td>{{habilidad}}</td>
-                    <tr>
-                {{/pokemones}}
+            <div class="container">
+                <table class="table">
+                    <thead>
+                    <tr class="table table-active text-center ">
+                        <th class="col-1 ">Numero</th>
+                        <th class="col-3">Imagen</th>
+                        <th class="col-2">Tipo</th>
+                        <th class="col-2">Nombre</th>
+                        <th class="col-3">Habilidad Especial</th>
+                        {{#esAmin}}
+                            <th class="col-1"> Accion</th>
+                        {{/esAmin}}
 
 
+                    </thead>
+                    <tbody>
 
-                <!-- Agrega más filas según sea necesario -->
-                </tbody>
-            </table>
+                    {{#pokemones}}
+                        <tr>
+                            <td class="text-center align-middle">{{numero}}</td>
+                            <td class="text-center align-middle"><img src="../public/imagenes/pokemon/{{imagenLink}}"
+                                                                      alt="Imagenn pokemon"></td>
+                            <td class="text-center align-middle"><img src="../public/imagenes/logos/{{tipo}}.png"
+                                                                      alt="logo" class="img-fluid"></td>
+                            <td class="text-center align-middle">{{nombre}}</td>
+                            <td class="text-center align-middle">{{habilidad}}</td>
+                        {{#esAmin}}
+                            <td class="text-center align-middle">Editar</td>
+                        {{/esAmin}}
+                        <tr>
+                    {{/pokemones}}
+
+                    </tbody>
+                </table>
+            </div>
         </div>
-
 
     </div>
 </article>

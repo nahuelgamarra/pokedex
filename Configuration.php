@@ -13,6 +13,7 @@
     include_once ("helpers/Router.php");
     include_once("helpers/MustacheRender.php");
     include_once ("conection/Conection.php");
+    include_once ("helpers/Header.php");
     include_once('third-party/mustache/src/Mustache/Autoloader.php');
     class Configuration
     {

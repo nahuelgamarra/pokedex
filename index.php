@@ -6,11 +6,7 @@
     
     $router = Configuration::getInstance()->getRouter();
     
-  //  $configuration = new Configuration();
-   
-  //  $router = $configuration->getRouter();
-   
-    $module = $_GET['module'] ?? 'Pokemon';
+    $module = $_GET['module'] ?? 'Home';
   
     $method = $_GET['action'] ?? 'list';
  

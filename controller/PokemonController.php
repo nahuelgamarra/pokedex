@@ -11,10 +11,10 @@
         $this->renderer=$renderer;
         }
         public function list(){
-         $data['pokemones'] =  $this->pokemonModel->getPokemons();
-         Session::set('pokemones', $data['pokemones']);
-//         var_dump(Session::get('pokemones')[0]['imagenLink']);
-//         exit();
+//         $data['pokemones'] =  $this->pokemonModel->getPokemons();
+//         Session::set('pokemones', $data['pokemones']);
+////         var_dump(Session::get('pokemones')[0]['imagenLink']);
+////         exit();
         $this->renderer->render('home', $data);
         }
         

@@ -22,18 +22,19 @@
             $data['user'] = $this->userModel->login($user, $password);
             if (empty($data['user'])) {
                 $data['msj'] = "Usuario y/o password incorrectos";
-                $this->renderer->render("home", $data);
+                Header::redirect('/home');
                 exit();
             }
             Session::set('logged', true);
             Session::set('user',$data['user'] );
-            $this->renderer->render("home", $data);
+            Header::redirect('/home');
+            exit();
         }
         
         public function logOut()
         {
             Session::finalizarSesion();
-            header("location: /");
+            Header::redirect('/');
         }
         
         private function getDatos()
@@ -44,7 +45,7 @@
                 $password = $_POST['password'];
                 return array($user, $password);
             } else {
-                $this->renderer->render("home");
+                Header::redirect('/home');
                 exit();
             }
             
