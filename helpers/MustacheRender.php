@@ -1,5 +1,4 @@
 <?php
-   // include_once ("view/user_view.mustache")
     class MustacheRender
     {
         private $mustache;

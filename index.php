@@ -1,14 +1,14 @@
 <?php
-    include_once('helpers/Session.php');
+    
     include_once('Configuration.php');
+    include_once('helpers/Session.php');
     
     Session::initializeSession();
+    $config = new Configuration();
+    $router = $config->getRouter();
     
-    $router = Configuration::getInstance()->getRouter();
-    
-    $module = $_GET['module'] ?? 'Home';
-  
+    $module = $_GET['module'] ?? 'home';
     $method = $_GET['action'] ?? 'list';
- 
+    
     $router->route($module, $method);
  

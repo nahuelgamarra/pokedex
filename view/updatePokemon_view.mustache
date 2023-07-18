@@ -1,0 +1,47 @@
+<sectio>
+    <h1>Pokemon</h1>
+    <div class="container">
+        {{#pokemon}}
+            <form action="admin/updatePokemon" method="post" enctype="multipart/form-data">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" placeholder=" {{nombre}}">
+                <br>
+                <div>
+                    <p>Tipo actual:{{tipo}} </p>
+                    <label for="tipo">Cambiar tipo</label>
+
+                    <select name="tipo" id="tipo">
+                        <option value="">Seleccione tipo</option>
+                        {{#tipos}}
+                            <option value="{{pasa}}">{{pasa}}</option>
+                        {{/tipos}}
+
+
+                    </select>
+
+                </div>
+                <div>
+                    <img src="../public/imagenes/pokemon/{{imagenLink}}"
+                         alt="Imagenn pokemon">
+                    <label for="descripcion">Descripcion</label>
+                    <textarea id="descripcion" name="miTexto" rows="4" cols="50">
+</textarea>
+                    <br>
+                    <label for="imagen" name="nuevaImg">Cambiar imagen</label>
+                    <input type="file" id="imagen">
+                </div>
+
+            </form>
+
+
+
+            {{numero}}
+
+            {{tipo}}
+            {{descripcion}}
+            {{habilidad}}
+        {{/pokemon}}
+    </div>
+
+
+</sectio>

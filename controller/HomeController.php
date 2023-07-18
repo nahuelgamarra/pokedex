@@ -18,6 +18,7 @@
                 }
             }
             $data['pokemones']= $this->homeModel->getPokemons();
+            
             $this->renderer->render('home',$data);
         }
         

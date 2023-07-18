@@ -28,10 +28,11 @@
                                                                       alt="Imagenn pokemon"></td>
                             <td class="text-center align-middle"><img src="../public/imagenes/logos/{{tipo}}.png"
                                                                       alt="logo" class="img-fluid"></td>
-                            <td class="text-center align-middle">{{nombre}}</td>
+                            <td class="text-center align-middle">{{nombre}}
+                            </td>
                             <td class="text-center align-middle">{{habilidad}}</td>
                         {{#esAmin}}
-                            <td class="text-center align-middle">Editar</td>
+                            <td class="text-center align-middle"> <a href="/admin/updatePokemon?pokemon= {{id}}"> Editar aa</a></td>
                         {{/esAmin}}
                         <tr>
                     {{/pokemones}}

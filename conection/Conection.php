@@ -33,7 +33,7 @@
         }
         public function query_row($sql) {
             $result = mysqli_query($this->connection, $sql);
-            return mysqli_fetch_assoc($result, MYSQLI_BOTH);
+            return mysqli_fetch_assoc($result,MYSQLI_PART_KEY_FLAG );
         }
         public function login($nick, $password){
             $query = 'SELECT * FROM user WHERE nick = ? AND password = ?';
