@@ -10,9 +10,10 @@
                     <tr class="table table-active text-center ">
                         <th class="col-1 ">Numero</th>
                         <th class="col-3">Imagen</th>
-                        <th class="col-2">Tipo</th>
+                        <th class="col-1">Tipo</th>
                         <th class="col-2">Nombre</th>
-                        <th class="col-3">Habilidad Especial</th>
+                        <th class="col-1">Habilidad Especial</th>
+                        <th class="col-1">Descripción</th>
                         {{#esAmin}}
                             <th class="col-1"> Accion</th>
                         {{/esAmin}}
@@ -28,9 +29,9 @@
                                                                       alt="Imagenn pokemon"></td>
                             <td class="text-center align-middle"><img src="../public/imagenes/logos/{{tipo}}.png"
                                                                       alt="logo" class="img-fluid"></td>
-                            <td class="text-center align-middle">{{nombre}}
-                            </td>
+                            <td class="text-center align-middle">{{nombre}}</td>
                             <td class="text-center align-middle">{{habilidad}}</td>
+                            <td class="text-center align-middle">{{descripcion}}</td>
                         {{#esAmin}}
                             <td class="text-center align-middle"> <a href="/admin/updatePokemon?pokemon= {{id}}"> Editar aa</a></td>
                         {{/esAmin}}

@@ -17,5 +17,17 @@
     
             return $this->database->query($sql);
         }
+        public function updatePokemon($datosPokemon){
+            
+            $sql= "update pokemon
+            set nombre= '$datosPokemon[nombre]',
+            tipo= '$datosPokemon[tipo]',
+            descripcion= '$datosPokemon[descripcion]',
+            habilidad= '$datosPokemon[habilidad]'
+            where id= '$datosPokemon[id]'
+            ";
+           
+            $this->database->execute($sql);
+        }
     
     }

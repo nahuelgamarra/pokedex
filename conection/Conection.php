@@ -43,6 +43,10 @@
             $resultado = $stmt->get_result();
             return  $resultado;
         }
+    
+        public function execute($sql){
+            mysqli_query($this->connection, $sql);
+        }
       
     }
  

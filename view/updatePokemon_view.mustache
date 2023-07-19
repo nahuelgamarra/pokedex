@@ -1,47 +1,48 @@
-<sectio>
-    <h1>Pokemon</h1>
+<section class="container align-content-lg-center">
+    <h1 class="">POKEMON</h1>
     <div class="container">
         {{#pokemon}}
-            <form action="admin/updatePokemon" method="post" enctype="multipart/form-data">
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre" placeholder=" {{nombre}}">
-                <br>
-                <div>
-                    <p>Tipo actual:{{tipo}} </p>
-                    <label for="tipo">Cambiar tipo</label>
-
-                    <select name="tipo" id="tipo">
-                        <option value="">Seleccione tipo</option>
-                        {{#tipos}}
-                            <option value="{{pasa}}">{{pasa}}</option>
-                        {{/tipos}}
-
-
-                    </select>
-
+            <form action="/admin/saveChanges" method="post" enctype="multipart/form-data">
+                <input type="hidden" name ='id' value="{{id}}">
+                <div class="form-group"> <!-- Agregamos la clase form-group para agrupar los elementos relacionados -->
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" value="{{nombre}}" class="form-control"> <!-- Agregamos la clase form-control para dar el mismo tamaño a los inputs -->
                 </div>
-                <div>
-                    <img src="../public/imagenes/pokemon/{{imagenLink}}"
-                         alt="Imagenn pokemon">
-                    <label for="descripcion">Descripcion</label>
-                    <textarea id="descripcion" name="miTexto" rows="4" cols="50">
-</textarea>
-                    <br>
-                    <label for="imagen" name="nuevaImg">Cambiar imagen</label>
-                    <input type="file" id="imagen">
+                <div class="row">
+                    <div class="col-md-6 form-group"> <!-- Agregamos la clase col-md-6 para que ocupe la mitad del ancho en dispositivos medianos y más grandes -->
+                        <label for="tipo">Tipo</label>
+                        <select name="tipo" id="tipo" class="form-control"> <!-- Agregamos la clase form-control para dar el mismo tamaño al select -->
+                            <option value="{{tipo}}">{{tipo}}</option>
+                            {{#tipos}}
+                                <option value="{{pasa}}">{{pasa}}</option>
+                            {{/tipos}}
+                        </select>
+                    </div>
+                    <div class="col-md-6"> <!-- Agregamos la clase col-md-6 para que ocupe la mitad del ancho en dispositivos medianos y más grandes -->
+                        <label for="habilidad">Habilidad</label>
+                        <input type="text" id="habilidad" name="habilidad" class="form-control" value="{{habilidad}}">
+                    </div>
                 </div>
 
+
+                <div>
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <img src="../public/imagenes/pokemon/{{imagenLink}}" alt="Imagenn pokemon">
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <h3>DESCRIPCIÓN</h3>
+                         <textarea class="w-100 form-control" id="miTextarea" name="descripcion" rows="6" cols="90" >{{descripcion}}
+                        </textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 d-flex justify-content-center">
+                    <button type="submit" class="btn btn-success">Enviar</button>
+                </div>
             </form>
-
-
-
-            {{numero}}
-
-            {{tipo}}
-            {{descripcion}}
-            {{habilidad}}
         {{/pokemon}}
     </div>
 
 
-</sectio>
+</section>
