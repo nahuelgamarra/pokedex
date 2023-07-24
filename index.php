@@ -9,6 +9,19 @@
     
     $module = $_GET['module'] ?? 'home';
     $method = $_GET['action'] ?? 'list';
+    $controladoresValios = [
+        'home',
+        'user'
+        
+    ];
+    
+    if(empty(Session::get('logged'))&& !in_array($module, $controladoresValios)){
+        Header::redirect("/");
+        exit();
+    }
+    
+    
+    
     
     $router->route($module, $method);
  

@@ -1,0 +1,48 @@
+<section class="container align-content-lg-center">
+    <h1 class="">POKEMON</h1>
+    <div class="container">
+        {{#pokemon}}
+            <div>
+                <!-- Ya no hay un formulario aquí -->
+                <input type="hidden" name='id' value="{{id}}">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" value="{{nombre}}" class="form-control">
+                </div>
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label for="tipo">Tipo</label>
+                        <select name="tipo" id="tipo" class="form-control">
+                            <option value="{{tipo}}">{{tipo}}</option>
+                            {{#tipos}}
+                                <option value="{{pasa}}">{{pasa}}</option>
+                            {{/tipos}}
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="habilidad">Habilidad</label>
+                        <input type="text" id="habilidad" name="habilidad" class="form-control" value="{{habilidad}}">
+                    </div>
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <img src="../public/imagenes/pokemon/{{imagenLink}}" alt="Imagenn pokemon">
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <h3>DESCRIPCIÓN</h3>
+                            <textarea class="w-100 form-control" id="miTextarea" name="descripcion" rows="6" cols="90">{{descripcion}}</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 d-flex justify-content-center">
+
+                    <a href="/" class="btn btn-primary">Volver</a>
+                </div>
+            </div>
+
+        {{/pokemon}}
+    </div>
+
+
+</section>

@@ -11,11 +11,7 @@
             $this->adminModel = $adminModel;
         }
         
-        public function list()
-        {
-            var_dump('listar de admin');
-            exit();
-        }
+  
         
         public function updatePokemon($msj =null )
         {

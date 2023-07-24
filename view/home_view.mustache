@@ -3,46 +3,24 @@
         <div>
             <h1>POKEMONES</h1>
         </div>
-        <div>
-            <div class="container">
-                <table class="table">
-                    <thead>
-                    <tr class="table table-active text-center ">
-                        <th class="col-1 ">Numero</th>
-                        <th class="col-3">Imagen</th>
-                        <th class="col-1">Tipo</th>
-                        <th class="col-2">Nombre</th>
-                        <th class="col-1">Habilidad Especial</th>
-                        <th class="col-1">Descripción</th>
-                        {{#esAmin}}
-                            <th class="col-1"> Accion</th>
-                        {{/esAmin}}
-
-
-                    </thead>
-                    <tbody>
-
-                    {{#pokemones}}
-                        <tr>
-                            <td class="text-center align-middle">{{numero}}</td>
-                            <td class="text-center align-middle"><img src="../public/imagenes/pokemon/{{imagenLink}}"
-                                                                      alt="Imagenn pokemon"></td>
-                            <td class="text-center align-middle"><img src="../public/imagenes/logos/{{tipo}}.png"
-                                                                      alt="logo" class="img-fluid"></td>
-                            <td class="text-center align-middle">{{nombre}}</td>
-                            <td class="text-center align-middle">{{habilidad}}</td>
-                            <td class="text-center align-middle">{{descripcion}}</td>
-                        {{#esAmin}}
-                            <td class="text-center align-middle"> <a href="/admin/updatePokemon?pokemon= {{id}}"> Editar aa</a></td>
-                        {{/esAmin}}
-                        <tr>
-                    {{/pokemones}}
-
-                    </tbody>
-                </table>
-            </div>
+        <div class="row">
+            {{#pokemones}}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="../public/imagenes/pokemon/{{imagenLink}}" class="card-img-top" alt="Imagenn pokemon">
+                        <div class="card-body">
+                            <h5 class="card-title">Numero: {{numero}}</h5>
+                            <p class="card-text">Nombre: {{nombre}}</p>
+                            <p class="card-text">Tipo: {{tipo}}</p>
+                            <p class="card-text">Habilidad Especial: {{habilidad}}</p>
+                            <p class="card-text">Descripción: {{descripcion}}</p>
+                            {{#esAmin}}
+                                <a href="/admin/updatePokemon?pokemon={{id}}" class="btn btn-primary">Editar</a>
+                            {{/esAmin}}
+                        </div>
+                    </div>
+                </div>
+            {{/pokemones}}
         </div>
-
     </div>
 </article>
-

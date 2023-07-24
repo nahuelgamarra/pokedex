@@ -18,8 +18,14 @@
                 }
             }
             $data['pokemones']= $this->homeModel->getPokemons();
-            
             $this->renderer->render('home',$data);
         }
+        public function listByName(){
+            $name= $_GET['buscado'];
+           $data['pokemon'] = $this->homeModel->listByName(ucfirst($name));
+        
+           $this->renderer->render('pokemon', $data);
+           
+    }
         
     }

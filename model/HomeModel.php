@@ -12,4 +12,13 @@
             return $this->database->query($sql);
         }
         
+        public function listByName($namePokemon){
+           
+            $sql= "SELECT * FROM pokemon p
+            where p.nombre= '$namePokemon'";
+//            var_dump($this->database->query_row($sql));
+//            exit();
+            return $this->database->query_row($sql);
+        }
+        
     }
